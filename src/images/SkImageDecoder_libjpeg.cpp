@@ -29,6 +29,11 @@ extern "C" {
     #include "jerror.h"
 }
 
+/* the android hacks don't work on PPC due to being LE specific */
+#ifdef __powerpc__
+#undef ANDROID_RGB
+#endif
+
 // this enables timing code to report milliseconds for an encode
 //#define TIME_ENCODE
 //#define TIME_DECODE
