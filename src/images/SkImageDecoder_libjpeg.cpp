@@ -40,7 +40,9 @@ extern "C" {
 
 // this enables our rgb->yuv code, which is faster than libjpeg on ARM
 // disable for the moment, as we have some glitches when width != multiple of 4
+#ifndef __powerpc__
 #define WE_CONVERT_TO_YUV
+#endif
 
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
